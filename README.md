@@ -1,1 +1,1 @@
-Testes e ecercícios do livro Black Hat Python
+Testes e exercícios do livro Black Hat Python
