@@ -19,7 +19,7 @@ print("[*] Listening on {0}:{1}".format(bind_ip, bind_port))
 # Thrad para tratamento de clients
 def handle_client(client_socket):
 
-    # exibe o que for enciado pelo client
+    # exibe o que for enviado pelo client
     request = client_socket.recv(1024)
 
     print("[*] Received: {0}".format(request))
@@ -37,5 +37,7 @@ while True:
     print(accept_connection)
 
     # Coloca a thread de cliente em ação para tratar os dados de entrada
-    client_handler = threading.Thread(target=handle_client, args=(client, ))
+    client_handler = threading.Thread(
+        target=handle_client, args=(client,)
+    )
     client_handler.start()
